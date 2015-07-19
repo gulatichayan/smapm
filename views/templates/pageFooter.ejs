@@ -1,0 +1,13 @@
+<footer class="footer">
+	<div class="container">
+		<p class="text-muted">&copysmapm.com</p>
+	</div>
+</footer>
+<script>
+var anchor = document.getElementsByTagName("a");
+for(c=0;c<anchor.length;c++) {
+	if(location.origin + location.pathname == anchor[c].href && anchor[c].href != "http://localhost:3000/") {
+		anchor[c].className = "bg-warning";
+	}
+}
+</script>

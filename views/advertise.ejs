@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advertise</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"></link>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <% include templates/pageHeader %>
+	  <%- navbar %>
+	  <div id="errorMessage" class="alert alert-info">
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div class="well">
+		<p> Share your company's profile. </p>
+		<p> E-Mail us at gulatichayan@gmail.com </p>
+	  </div>
+	 </div>
+	 <% include templates/pageFooter %>
+	 <script src="javascripts/jquery.js"></script>
+	 <script src="javascripts/bootstrap.js"></script>
+  </body>
+ </html>

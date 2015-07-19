@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Stock</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">Stock Market Analysis and Portfolio Management</div>
+	  <% include templates/loggedinHeader.ejs %>
+	  <div id="welcome">
+		<h3>Welcome</h3>
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div id="logout">
+		<form id="logoutform" method ="post" action="/logout">
+			<input type="submit" name="Logout" value="Logout" />
+		</form>
+	  </div>
+	  <div id="stock_search">
+		<form id="addPortForm" method="post" action="/portfolio">
+			<input type="text" name="stock_symbol" id="stock_symbol" placeholder="Enter Stock Symbol" autofocus />
+			<input type="button" name="stock_search_but" id="stock_search_but" value="Search Stock" />
+			<input type="button" name="add_to_portfolio" id="add_to_portfolio" value="Add To Portfolio" />
+			<input type="number" step="any" name="invPrice" placeholder="Inv. Price" id="invPrice" class="invisible" />
+			<input type="number" name="quant" placeholder="Quantity" id="quant" class="invisible"/>
+			<input type="submit" name="Add" value="Add" id="add" class="invisible" />
+			<a tabindex="-1" href="#" class="tooltip"><img src="images/cross.png" id="img_cross" class="invisible"><span><img class="callout" src="images/callout.gif" /><strong>Cancel addition to portfolio</strong></span></img></a>
+		</form>
+	  </div>
+	  <div id="stock_result">
+	  <p><span id="span0"></span><span id="span1"></span><span id="span2"></span></p>
+	  <p><span id="span3"></span><img id="arrow"></img><span id="span4"></span><span id="span5"></span><span id="span6"></span><span id="span7"></span></p>
+	  <table id="stocktable1" class="stocktable">
+		  <tr>
+			<td class="left"><span id="span8"></td></span><td class="right"><span id="span9"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span12"></span></td><td class="right"><span id="span13"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span16"></span></td><td class="right"><span id="span17"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span20"></span></td><td class="right"><span id="span21"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span24"></span></td><td class="right"><span id="span25"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span28"></span></td><td class="right"><span id="span29"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span32"></span></td><td class="right"><span id="span33"></span></td>
+		  </tr>
+	  </table>
+	  <table id="stocktable2" class="stocktable">
+		  <tr>
+			<td class="left"><span id="span10"></span></td><td class="right"><span id="span11"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span14"></span></td><td class="right"><span id="span15"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span18"></span></td><td class="right"><span id="span19"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span22"></span></td><td class="right"><span id="span23"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span26"></span></td><td class="right"><span id="span27"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span30"></span></td><td class="right"><span id="span31"></span></td>
+		  </tr>
+		  <tr>
+			<td class="left"><span id="span34"></span></td><td class="right"><span id="span35"></span></td>
+		  </tr>
+	  </table>
+	  </div>
+	  <div id="chart">
+		<img id="imgchart"></img>
+	  </div>
+	  <div id="footer">&copysmapm.com</div>
+	  <div id="extra"></div>
+	 </div>
+	<script src="/javascripts/scriptSearchStock.js"></script>
+  </body>
+ </html>

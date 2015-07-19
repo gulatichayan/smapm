@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">Stock Market Analysis and Portfolio Management</div>
+	  <p id="errorMessage"><%= message %></p>
+	  <div id="menu" style="width:350px">
+	    <ul>
+		  <a href="/aboutUS"><li class="topmenusele">About Us</li></a>
+		  <a href="/contactUs"><li class="topmenusele">Contact Us</li></a>
+		  <a href="/advertise"><li class="topmenusele">Advertise</li></a>
+		</ul>
+	  </div>
+	  <div id="slider">
+	  <img id="simage" src="images/pic1.png"></img>
+	  </div>
+	  <div id="login">
+		<form id="logform" method="post" action="/home">
+			<input type="text" name="email" placeholder="E-mail ID" id="email" autofocus />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error1" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Provide Correct E-Mail</strong></span></img></a>
+			<br /> <br />
+			<input type="password" name="pass" placeholder="Password" id="pass" />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error2" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Provide Correct Password</strong></span></img></a>
+			<br /> <br />
+			<input type="submit" name="Login" value="Login" />
+		</form>
+	  </div>
+	  <div id="register">
+		<h3>Register Here!</h3>
+		<form id="regform" method="post" action="/">
+			<input type="text" name="firstName" placeholder="First Name" id="firstName" />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error3" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Provide First Name</strong></span></img></a>
+			<br /> <br />
+			<input type="text" name="lastName" placeholder="Last Name" id="lastName" />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error4" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Provide Last Name</strong></span></img></a>
+			<br /> <br />
+			<input type="text" name="email" placeholder="E-Mail ID" id="email" />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error5" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Provide Correct E-Mail</strong></span></img></a>
+			<br /> <br />
+			<input type="password" name="pass" placeholder="Password" id="pass" />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error6" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Provide Password(atleast six characters with atleast one lowercase, one uppercase and one number)</strong></span></img></a>
+			<br /> <br />
+			<input type="password" name="confPass" placeholder="Confirm Password" id="confPass" />
+			<a tabindex="-1" href="#" class="tooltip"><img id="img_error7" class="error_img"><span><img class="callout" src="images/callout.gif" /><strong>Passwords don't match</strong></span></img></a>
+			<br /> <br />
+			<input type="submit" name="submit" value="Submit" />
+		</form>
+	  </div>
+	  <div id="footer"> &copysmapm.com </div>
+	  <div id="extra"></div>
+	</div>
+	<script src="/javascripts/scriptIndex.js"></script>
+  </body>
+ </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"></link>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/newStyle.css"></link>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <% include templates/pageHeader %>
+	  <% include templates/navBarLoggedIn.ejs %>
+	  <div class="alert alert-info">
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div id="errorMessage" class="hide">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<p id="marketCritical"></p>
+		<p id="removalMessage"></p>
+		<p><%= message %></p>
+	  </div>
+	  <% if(message != "") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-success";
+		</script>
+	  <% } %>
+	  <% if(data.length == 0) { %>
+		<div class="alert alert-warning">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<p>There are no stocks in your portfolio. You can add stocks by clicking on <a href="/searchStock">Search Stock</a></p>
+		</div>
+	  <% } %>
+	  <div>
+	  <div id="networth" class="col-sm-4 well">
+		<p><span id="index0"></span></p>
+		<p><span id="index1"></span><img id="arrowNetworth"></img><span id="index2"></span><span id="index3"></span></p>
+	  </div>
+	  <!--<div id="gainer" class="col-sm-4 well">
+		<p>TOP GAINER</p>
+		<p><span id="index4"></span></p>
+		<p><span id="index5"></span><img id="arrowGainer"></img><span id="index6"></span><span id="index7"></span></p>
+	  </div>
+	  <div id="loser" class="col-sm-4 well">
+		<p>TOP LOSER</p>
+		<p><span id="index4"></span></p>
+		<p><span id="index5"></span><img id="arrowLoser"></img><span id="index6"></span><span id="index7"></span></p>
+	  </div>-->
+		<table id="portfoliotable" class="table table-striped">
+			<tr>
+				<th>Company</th><th>Symbol</th><th>Live Price</th><th>Change</th><th>Quantity</th><th>Inv. Price</th><th>Day's Gain</th><th>Day's Gain%</th><th>Overall Gain</th><th>Overall Gain%</th><th>Latest Value</th>
+			</tr>
+			<% for(i=0;i<data.length;i++) { %>
+			<tr>
+				<td class="company"></td><td class="symbol"><%= data[i].symbol %></td><td class="price"></td><td class="change text-nowrap"><img class="changeArrow"></img></td><td class="quantity"><%= data[i].quantity %></td><td class="invPrice"><%= data[i].invPrice %></td><td class="daysGain"></td><td class="daysGain%"></td><td class="overallGain text-nowrap"><img class="overallGainArrow"></img></td><td class="overallGainPer text-nowrap"><img class="overallGain%Arrow"></img></td><td class="latestValue"></td><td><a href="/portfolio/edit/<%= data[i].id %>" style="font-size:13px">Edit</a>|<a onclick="handle(this);" href='#' style="font-size:13px">Remove</a></td><td class="hide">/portfolio/remove/<%= data[i].id %></td>
+			</tr>
+			<% } %>
+		</table>
+	  </div>	  
+	 </div> 
+	<% include templates/pageFooter %>
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/bootstrap.js"></script>
+	<script src="/javascripts/scriptPortfolio.js"></script>
+ </body>
+</html>

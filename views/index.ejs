@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"></link>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/newStyle.css"></link>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <% include templates/pageHeader %>
+	  <%include templates/navBar %>
+	  <div id="errorMessage" class="hide">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong><p><%- message %></p></strong>
+	  </div>
+		<% if(message == "Email ID and Password do not match!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-warning";
+			</script>
+		<% } else if(message == "Please login first!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-danger";
+			</script>
+		<% } else if(message == "Registration successful, check you email for the verification link!") {%>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-success";
+			</script>
+		<% } else if(message == "A user with this E Mail already exists!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-warning";
+			</script>
+		<% } else if(message == "This email id is not registered!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-warning";
+			</script>
+		<% } else if(message == "You have made one or more mistakes while filling the form. Please fill again!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-danger";
+			</script>
+		<% } else if(message == "Email not verified, please click the verification link which was send to you during registration!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-warning";
+			</script>
+		<% } else if(message == "Email verified. Please login!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-success";
+			</script>
+		<% } else if(message == "This email id is not registered or maybe you are using a wrong verification link. Just login with your email id once!") { %>
+			<script>
+				document.getElementById("errorMessage").className = "alert alert-warning";
+			</script>
+		<% } %>
+	  <div class="pull-right jumbotron">
+		  <div id="login">
+			<form id="logform" role="form" method="post" action="/home">
+				<div class="col-xs-12">
+					<input class="form-control" type="text" name="email" placeholder="E-mail ID" id="email" autofocus />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error1" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Provide Correct E-Mail</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+					<input class="form-control" type="password" name="pass" placeholder="Password" id="pass" />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error2" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Provide Correct Password</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+				<input class="btn btn-success" type="submit" name="Login" value="Login"  />
+				</div>
+			</form>
+		  </div>
+		  <br /> <br /> <br />
+		  <div class="col-xs-12">
+			<h3>Register Here!</h3>
+		  </div>
+		  <br /> <br /> 
+		  <div id="register">
+			<br /> 
+			<form id="regform" role="form" method="post" action="/">
+				<div class="col-xs-12">
+					<input class="form-control" type="text" name="firstName" placeholder="First Name" id="firstName" />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error3" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Provide First Name</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+					<input class="form-control" type="text" name="lastName" placeholder="Last Name" id="lastName" />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error4" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Provide Last Name</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+					<input class="form-control" type="text" name="email" placeholder="E-Mail ID" id="email" />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error5" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Provide Correct E-Mail</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+					<input class="form-control" type="password" name="pass" placeholder="Password" id="pass" />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error6" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Provide Password(atleast six characters with atleast one lowercase, one uppercase and one number)</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+					<input class="form-control" type="password" name="confPass" placeholder="Confirm Password" id="confPass" />
+					<a tabindex="-1" href="#" class="mytooltip pull-right" onclick="event.preventDefault();"><img id="img_error7" class="error_img pull-right"><span><img class="callout" src="images/callout.gif" /><strong>Passwords don't match</strong></span></img></a>
+				</div>
+				<br /> <br />
+				<div class="col-xs-12">
+					<input class="btn btn-success" type="submit" name="submit" value="Submit" />
+				</div>
+			</form>
+		  </div>
+	  </div>
+	  <div id="slider">
+		<img id="simage" src="images/buffet.jpg"></img>
+	  </div>
+	</div>
+	<% include templates/pageFooter %>
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/bootstrap.js"></script>
+	<script src="/javascripts/scriptIndex.js"></script>
+  </body>
+ </html>

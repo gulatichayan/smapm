@@ -1,0 +1,50 @@
+.error_img {width:17px;
+		   height:17px;
+		   visibility:hidden;}
+		   
+a.mytooltip {outline:none; }
+
+a.mytooltip:hover {text-decoration:none;}
+ 
+a.mytooltip span {z-index:10;
+			  display:none;
+			  padding:14px 20px;
+			  margin-top:-30px;
+			  margin-left:28px;
+			  width:150px;
+			  line-height:16px;}
+			  
+a.mytooltip:hover span{display:inline;
+					position:absolute;
+					color:#111;
+					border:1px solid #DCA;
+					background:#fffAF0;}
+					
+.callout {z-index:20;
+		 position:absolute;
+		 top:30px;
+		 border:0;
+		 left:-12px;}
+		 
+a.mytooltip span{border-radius:4px;
+			  box-shadow: 5px 5px 8px #CCC;}
+			  
+#span0, #index0, #index4 {font-weight:bold;
+				font-size:20px;}
+		
+#span1 {font-weight:bold;}
+
+#span2 {font-size:12px;
+		color:#9B9B96}
+		
+#span3, #index1, #index5 {font-size:30px;
+				font-weight:bold;}
+		
+#span4, #span5, #index2, #index3, #index6, #index7 {font-size:20px;
+								 font-weight:bold;}
+
+#span6, #span7 {font-size:12px;
+				color:#9B9B96}
+				
+#img_cross {width:17px;
+			height:17px;}				

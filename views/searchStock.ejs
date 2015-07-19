@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Stock</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"></link>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/newStyle.css"></link>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <% include templates/pageHeader %>
+	  <% include templates/navBarLoggedIn.ejs %>
+	  <div class="alert alert-info">
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div id="errorMessage" class="hide">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong><p id="marketCritical"></p></strong>
+	  </div>
+	  <div id="stock_search">
+		<form id="addPortForm" method="post" action="/portfolio">
+			<input type="text" name="stock_symbol" id="stock_symbol" placeholder="Enter Stock Symbol" autofocus autocomplete="off" />
+			<input class="hide" type="text" name="stock_symbol_shadow" id="stock_symbol_shadow" autocomplete="off" />
+			<input class="btn btn-primary" type="button" name="stock_search_but" id="stock_search_but" value="Search Stock" />
+			<input class="btn" type="button" name="add_to_portfolio" id="add_to_portfolio" value="Add To Portfolio" />
+			<input type="number" step="any" name="invPrice" placeholder="Inv. Price" id="invPrice" class="invisible" />
+			<input type="number" name="quant" placeholder="Quantity" id="quant" class="invisible"/>
+			<input type="submit" name="Add" value="Add" id="add" class="invisible" />
+			<a tabindex="-1" href="#" class="mytooltip"><img src="images/cross.png" id="img_cross" class="invisible"><span><img class="callout" src="images/callout.gif" /><strong>Cancel addition to portfolio</strong></span></img></a>
+		</form>
+	  </div>
+	  <div class="dropdown dropdown-toggle" data-toggle="dropdown"">
+		<ul id="suggestList" role="menu" class="dropdown-menu"></ul>
+	  </div>
+	  <br /> <br />
+	  <div id="stock_result" class="invisible">
+		  <p><span id="span0"></span><span id="span1"></span><span id="span2"></span></p>
+		  <p><span id="span3"></span><img id="arrow"></img><span id="span4"></span><span id="span5"></span><span id="span6"></span><span id="span7"></span></p>
+		  <div class="col-sm-4">
+			  <table class="table">
+				  <tr>
+					<td class="left"><span id="span8"></td></span><td class="right"><span id="span9"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span12"></span></td><td class="right"><span id="span13"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span16"></span></td><td class="right"><span id="span17"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span20"></span></td><td class="right"><span id="span21"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span24"></span></td><td class="right"><span id="span25"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span28"></span></td><td class="right"><span id="span29"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span32"></span></td><td class="right"><span id="span33"></span></td>
+				  </tr>
+			  </table>
+		  </div>
+		  <div class="col-sm-4">
+			  <table class="table">
+				  <tr>
+					<td class="left"><span id="span10"></span></td><td class="right"><span id="span11"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span14"></span></td><td class="right"><span id="span15"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span18"></span></td><td class="right"><span id="span19"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span22"></span></td><td class="right"><span id="span23"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span26"></span></td><td class="right"><span id="span27"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span30"></span></td><td class="right"><span id="span31"></span></td>
+				  </tr>
+				  <tr>
+					<td class="left"><span id="span34"></span></td><td class="right"><span id="span35"></span></td>
+				  </tr>
+			  </table>
+		  </div>
+	  </div>
+	  <div id="chart" class="col-sm-4">
+		<img id="imgchart"></img>
+	  </div>
+	 </div>
+	<% include templates/pageFooter %>
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/bootstrap.js"></script> 
+	<script src="/javascripts/scriptSearchStock.js"></script>
+	<script src="/javascripts/scriptSearchJson.js"></script>
+  </body>
+ </html>

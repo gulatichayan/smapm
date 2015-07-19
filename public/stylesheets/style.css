@@ -1,0 +1,231 @@
+body {background-color:black;
+	  background-image:url("/images/background.jpg");
+	  background-repeat:no-repeat;
+	  /*background-position:top;*/}
+
+div{/*border:1px solid black;*/
+   padding:10px;
+   border-radius:0px;}
+   
+#main {background-color:white;
+	   opacity:0.9;
+	  /*background-image:url("/images/background.jpg");
+	  background-repeat:no-repeat;
+	  background-position:left;*/
+	  position:absolute;
+	  width:1020px;
+	  height:800px;
+	  left:155px;
+	  top:100px;}
+	  
+#header {background-color:#3B5998;
+		font-size:45px;
+		text-align:center;
+		color:white;
+		width:1000px;
+		position:absolute;}
+		
+#menu {background-color:#C6C5C6;
+	  position:absolute;
+	  top:100px;
+	  width:615px;}
+	  
+ul a {text-decoration:none;}
+
+ul li a:hover 
+{
+    background-color:black;
+}
+	  
+.topmenusele {display:inline;
+			 /*border:1px solid black;*/
+			 border-radius:10px;
+			 background-color:lightcyan;
+			 padding:10px;
+			 width:200px;
+			 height:150px;}
+  		
+#slider {/*background-color:cyan;*/
+		 position:absolute;
+		 top:250px;
+		 width:300px;
+		 height:300px;}
+
+#static {background-color:#3B5998;
+		font-size:40px;
+		text-align:center;
+		color:white;
+		width:1000px;
+		position:absolute;
+		top:350px;}
+		 
+#simage {width:300px;
+		height:300px;}
+		 
+#login {position:absolute;
+	   top:100px;
+	   left:750px;
+	   width: 250px;
+	   background-color:cyan;}
+	   
+#logout {position:absolute;
+	   top:275px;
+	   left:750px;
+	   width: 250px;
+	   background-color:cyan;}
+
+.error_img {width:17px;
+		   height:17px;
+		   visibility:hidden;}
+		   
+#register{position:absolute;
+		  top:310px;
+		  left:750px;
+		  width: 250px;
+		  background-color:cyan;}
+
+input {height:30px;
+	 width:200px;
+	 background-color:lightcyan;
+	 border-radius:10px;}
+
+input[type=text], input[type=password] {outline: none;
+									 padding: 3px 0px 3px 3px;
+									 margin: 5px 1px 3px 0px;
+									 border: 1px solid #DDDDDD;}   
+   
+input[type=text]:focus, input[type=password]:focus {box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+												 padding: 3px 0px 3px 3px;
+												 margin: 5px 1px 3px 0px;
+												 border: 1px solid rgba(81, 203, 238, 1);}
+	 
+#errorMessage {position:absolute;
+			  top:270px;
+			  left:760px;}
+			  
+#errorMessagePort {position:absolute;
+			  top:270px;
+			  left:360px;}
+			  
+a.tooltip {outline:none; }
+
+a.tooltip:hover {text-decoration:none;}
+ 
+a.tooltip span {z-index:10;
+			  display:none;
+			  padding:14px 20px;
+			  margin-top:-30px;
+			  margin-left:28px;
+			  width:110px;
+			  line-height:16px;}
+			  
+a.tooltip:hover span{display:inline;
+					position:absolute;
+					color:#111;
+					border:1px solid #DCA;
+					background:#fffAF0;}
+					
+.callout {z-index:20;
+		 position:absolute;
+		 top:30px;
+		 border:0;
+		 left:-12px;}
+		 
+a.tooltip span{border-radius:4px;
+			  box-shadow: 5px 5px 8px #CCC;}
+			  
+#welcome {position:absolute;
+	   top:100px;
+	   left:750px;
+	   width: 250px;
+	   background-color:cyan;}
+	   
+#stock_search{position:absolute;
+			  top:300px;
+			  width:730px;}
+
+#stock_result{visibility:hidden;
+			  position:absolute;
+			  top:400px;
+			  width:550px;
+			  height:315px;}
+
+.stocktable  {width:200px;}
+
+#stocktable2 {position:absolute;
+			  top: 115px;
+			  left:250px;
+			  width:300px;}
+			  
+.left {border-bottom:1px solid #9B9B96;
+	  padding-bottom:3px;}
+	  	  
+.right {border-bottom:1px solid #9B9B96;
+	   padding-bottom:3px;
+	   text-align:right;
+	   font-weight:bold;}
+			  
+#chart {visibility: hidden;
+		position:absolute;
+		top:500px;
+		left: 600px;}
+		
+#imgchart {width:314px;}
+
+#addPort {position:absolute;
+		 top:350px;
+		 left:500px;}
+		 
+.invisible {display:none;}
+
+.visible {display:inline;}
+
+#img_cross {width:17px;
+			height:17px;}
+
+#portfolio {position:absolute;
+			top:350px;}
+			
+.change, .overallGain, .overallGainPer {white-space:nowrap;}
+
+#indexNasdaq{visibility:hidden;
+			 position:absolute;
+			 top:200px;
+			 left:44px;
+			 width:250px;
+			 border-radius:0px;}
+
+#indexSnp{visibility:hidden;
+		  position:absolute;
+		  top:200px;
+		  left:314px;
+		  width:250px;
+		  border-radius:0px;
+		  padding-left:40px;
+		  border-left:1px solid #9B9B96;}
+		
+#span0, #index0, #index4 {font-weight:bold;
+				font-size:20px;}
+		
+#span1 {font-weight:bold;}
+
+#span2 {font-size:12px;
+		color:#9B9B96}
+		
+#span3, #index1, #index5 {font-size:30px;
+				font-weight:bold;}
+		
+#span4, #span5, #index2, #index3, #index6, #index7 {font-size:20px;
+								 font-weight:bold;}
+
+#span6, #span7 {font-size:12px;
+				color:#9B9B96}
+			  
+#footer {color:black;
+		width:100px;
+		position:absolute;
+		top:770px;
+		left:450px;}
+		
+#extra {position:absolute;
+		top:900px;}

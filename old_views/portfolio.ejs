@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">Stock Market Analysis and Portfolio Management</div>
+	  <p id="errorMessagePort"><%= message %></p>
+	  <% include templates/loggedinHeader.ejs %>
+	  <div id="welcome">
+		<h3>Welcome</h3>
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div id="logout">
+		<form id="logoutform" method ="post" action="/logout">
+			<input type="submit" name="Logout" value="Logout" />
+		</form>
+	  </div>
+	  <div id="portfolio">
+		<table id="portfoliotable" cellpadding="10px" border="1px" style="text-align:center;border-collapse: collapse;">
+			<tr>
+				<th>Company</th><th>Symbol</th><th>Live Price</th><th>Change</th><th>Quantity</th><th>Inv. Price</th><th>Day's Gain</th><th>Day's Gain%</th><th>Overall Gain</th><th>Overall Gain%</th><th>Latest Value</th>
+			</tr>
+			<% for(i=0;i<data.length;i++) { %>
+			<tr>
+				<td class="company"></td><td class="symbol"><%= data[i].symbol %></td><td class="price"></td><td class="change"><img class="changeArrow"></img></td><td class="quantity"><%= data[i].quantity %></td><td class="invPrice"><%= data[i].invPrice %></td><td class="daysGain"></td><td class="daysGain%"></td><td class="overallGain"><img class="overallGainArrow"></img></td><td class="overallGainPer"><img class="overallGain%Arrow"></img></td><td class="latestValue"></td><td><a href="/portfolio/edit/<%= data[i].id %>" style="font-size:13px">Edit</a>|<a href="/portfolio/remove/<%= data[i].id %>" style="font-size:13px">Remove</a></td>
+			</tr>
+			<% } %>
+		</table>
+	  </div>
+	  <div id="footer">&copysmapm.com</div>
+	  <div id="extra"></div>
+	 </div> 
+	<script src="/javascripts/scriptPortfolio.js"></script>
+ </body>
+</html>

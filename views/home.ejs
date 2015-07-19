@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"></link>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/newStyle.css"></link>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <% include templates/pageHeader %>
+	  <% include templates/navBarLoggedIn.ejs %>
+	  <div class="alert alert-info">
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div id="errorMessage" class="hide">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong><p id="marketCritical"></p></strong>
+	  </div>
+		<div id="indexNasdaq" class="col-sm-6 well">
+			<p><span id="index0"></span></p>
+			<p><span id="index1"></span><img id="arrowNasdaq"></img><span id="index2"></span><span id="index3"></span></p>
+		</div>
+		<div id="indexSnp" class="col-sm-6 well">
+			<p><span id="index4"></span></p>
+			<p><span id="index5"></span><img id="arrowSnp"></img><span id="index6"></span><span id="index7"></span></p>
+		</div>
+	 </div>
+	<% include templates/pageFooter %>
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/bootstrap.js"></script>
+	<script src="/javascripts/scriptIndexes.js"></script> 
+  </body>
+ </html>

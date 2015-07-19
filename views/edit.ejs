@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"></link>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/newStyle.css"></link>
+  </head>
+  <body>
+    <div id="main" class="container">
+      <% include templates/pageHeader %>
+	  <% include templates/navBarLoggedIn.ejs %>
+	  <div class="alert alert-info">
+		<p id="name"><%= firstName %> <%= lastName %></p>
+		<p id="email"><%= email %></p>
+	  </div>
+	  <div id="stock_search">
+		<form id="addPortForm" method="post" action="/portfolio/edit/<%= id %>">
+			<input type="text" name="stock_symbol" id="stock_symbol" value="<%= symbol %>" readonly />
+			<input type="button" name="stock_search_but" id="stock_search_but" value="Search Stock" />
+			<input type="button" name="add_to_portfolio" id="add_to_portfolio" value="Edit" />
+			<input type="number" step="any" name="invPrice" placeholder="New Inv. Price" id="invPrice" class="invisible" />
+			<input type="number" name="quant" placeholder="New Quantity" id="quant" class="invisible"/>
+			<input type="submit" name="done" value="Done" id="add" class="invisible" />
+			<a tabindex="-1" href="#" class="mytooltip"><img src="../../images/cross.png" id="img_cross" class="invisible" /><span><img class="callout" src="../../images/callout.gif" /><strong>Cancel addition to portfolio</strong></span></img></a>
+		</form>
+	  </div>
+	  <br /> <br />
+	  <div id="stock_result" class="invisible">
+	  <p><span id="span0"></span><span id="span1"></span><span id="span2"></span></p>
+	  <p><span id="span3"></span><img id="arrow"></img><span id="span4"></span><span id="span5"></span><span id="span6"></span><span id="span7"></span></p>
+	  <div class="col-sm-4">
+		  <table id="stocktable1" class="table">
+			  <tr>
+				<td class="left"><span id="span8"></td></span><td class="right"><span id="span9"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span12"></span></td><td class="right"><span id="span13"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span16"></span></td><td class="right"><span id="span17"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span20"></span></td><td class="right"><span id="span21"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span24"></span></td><td class="right"><span id="span25"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span28"></span></td><td class="right"><span id="span29"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span32"></span></td><td class="right"><span id="span33"></span></td>
+			  </tr>
+		  </table>
+	  </div>
+	  <div class="col-sm-4">
+		  <table id="stocktable2" class="table">
+			  <tr>
+				<td class="left"><span id="span10"></span></td><td class="right"><span id="span11"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span14"></span></td><td class="right"><span id="span15"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span18"></span></td><td class="right"><span id="span19"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span22"></span></td><td class="right"><span id="span23"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span26"></span></td><td class="right"><span id="span27"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span30"></span></td><td class="right"><span id="span31"></span></td>
+			  </tr>
+			  <tr>
+				<td class="left"><span id="span34"></span></td><td class="right"><span id="span35"></span></td>
+			  </tr>
+		  </table>
+	  </div>
+	  </div>
+	  <div id="chart" class="col-sm-4">
+		<img id="imgchart"></img>
+	  </div>
+	 </div>
+	<% include templates/pageFooter %>
+	<script src="/javascripts/jquery.js"></script>
+	<script src="/javascripts/bootstrap.js"></script> 
+	<script src="/javascripts/scriptSearchStock.js"></script>
+  </body>
+ </html>
